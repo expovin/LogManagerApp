@@ -1,7 +1,7 @@
 
         <div class="row row-content">
             <div class="col-xs-12">        
-                <h1>Dettaglio Log {{server}}</h1>
+                <h1>Log Details -  {{server}}</h1>
 
                 <div class="row">
                     <div class="col-md-1">
@@ -46,7 +46,7 @@
                                     <!--File Last update date-->
                                     <div class="col-md-3">
                                         <dl>
-                                            <dt>Data aggiornamento</dt>
+                                            <dt>Last update date</dt>
                                             <dd>{{logs[activeLayer][activeDir][activeFile].Stats.mtime | date:'fullDate' }}</dd>
                                         </dl>
                                     </div>
