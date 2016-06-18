@@ -1,0 +1,44 @@
+
+        <div class="row row-content">       
+        <div class="container">          
+  <!--      <div class="row"> -->
+                <h1>Lista Server</h1>
+                <div class="col-sm-6">
+                <ul class="media-list tab-pane fade in active">
+                    <li class="media" ng-repeat="Server in ServersList">
+                        <div class="media-left media-top">
+                            <a>
+                            <img class="media-object img-thumbnail"
+                            ng-src="images/QS.PNG" alt="Qlik Sense">
+                            </a>
+                        </div>
+                        <div class="media-body">
+
+                            <div class="panel panel-success">
+                              <div class="panel-heading">
+                                <div class="panel-title"><a ui-sref="app.LogsView({server:Server.name})"><bold>{{Server.name}}</bold></a> 
+                                  <i>
+                                    <a href="#"><span class="glyphicon glyphicon-remove" aria-hidden="true" ng-click="removeServer(Server.name)"></span></a>
+                                    <a href="#"><span class="glyphicon glyphicon-download-alt" aria-hidden="true" ng-click="getLayersLog(Server.name)"></span></a>
+                                  </i>
+                                </div>
+                              </div>
+                              <div class="panel-body">
+                                <dl class="dl-horizontal" >
+                                  <div ng-repeat="(LayerName, LayerDett) in Server.layers">
+                                    <dt>{{LayerName}} <a href="#"><span class="glyphicon glyphicon-download-alt" aria-hidden="true" ng-click="getLayerLog(Server.name,LayerName)"></span></a></dt>
+                                    <dd>{{numRecords}}</dd>
+                                  </div>
+                               </dl>
+                              </div>
+                              <div class="panel-footer">Last Update at: {{Server.lastUpdateDate}}</div>
+                            </div>
+
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                </div>
+        <!--    </div> -->
+            </div>
+        </div>

@@ -1,0 +1,55 @@
+<div modal="showAllModal">
+  <div class="modal-header">
+      
+    <div class="row">
+      <div class="col-md-4">
+          <h3>Record Details #{{recordNum}}</h3>
+      </div>
+      <div class="col-md-8">
+        <div class="alert alert-{{alert[recordNum]}}">
+          <strong>{{alert[recordNum]}}</strong>
+        </div>
+      </div>
+    </div>
+      
+  </div>
+  <div class="modal-body">
+
+    <div class="row">
+          <h3>
+              <div class="col-md-1 col-md-offset-5">
+                  <a><span class="glyphicon glyphicon-chevron-left" aria-hidden="true" ng-click="prevRecord()" ></span></a>
+              </div>
+              <div class="col-md-1">
+                  <a><span class="glyphicon glyphicon-chevron-right" aria-hidden="true" ng-click="nextRecord()" ></span></a>
+              </div>              
+          </h3>
+    </div>
+
+    <br/>
+    
+    <div class="row">
+          <div class="col-md-5">
+            <dl class="dl-horizontal">
+                <div ng-repeat="(Key,val) in record[recordNum]">
+                  <dt  ng-hide="$odd">{{Key}}</dt>
+                  <dd ng-hide="$odd">{{val}}</dd>
+                </div>
+            </dl>
+        </div>       
+
+        <div class="col-md-5">
+            <dl class="dl-horizontal">
+                <div ng-repeat="(Key,val) in record[recordNum]">
+                  <dt  ng-hide="$even">{{Key}}</dt>
+                  <dd ng-hide="$even">{{val}}</dd>
+                </div>
+            </dl>      
+        </div>  
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-success" ng-click="ok(listServer)">Okay</button>
+    <button class="btn" ng-click="cancel()">Cancel</button>
+  </div>
+</div>
